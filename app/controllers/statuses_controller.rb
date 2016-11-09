@@ -14,8 +14,7 @@ class StatusesController < ApplicationController
 
   # GET /statuses/new
   def new
-    redirect_to statuses_path
-    # @status = Status.new
+    @status = Status.new
   end
 
   # GET /statuses/1/edit
