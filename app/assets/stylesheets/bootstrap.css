@@ -2444,10 +2444,6 @@ table th[class*="col-"] {
   overflow-x: auto;
 }
 
-body {
-  padding-top:  50px;
-}
-
 @media screen and (max-width: 767px) {
   .table-responsive {
     width: 100%;
