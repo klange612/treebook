@@ -2,6 +2,7 @@
 
 <div class="page-header">
   <h1>Statuses</h1>
+  <%= button_to 'New Status', new_status_path, method: :get, class: 'btn btn-large btn-success' %>
 </div>
 
   <% @statuses.each do |status| %>
@@ -21,4 +22,3 @@
 
 <br>
 
-<%= button_to 'New', new_status_path, method: :get, class: 'btn btn-large btn-primary' %>
