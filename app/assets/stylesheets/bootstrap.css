@@ -1409,7 +1409,7 @@ a.bg-danger:focus {
 }
 .page-header {
   padding-bottom: 9px;
-  /*margin: 40px 0 20px;*/
+  margin: 40px 0 20px;
   border-bottom: 1px solid #eee;
 }
 ul,
@@ -2443,7 +2443,6 @@ table th[class*="col-"] {
   min-height: .01%;
   overflow-x: auto;
 }
-
 @media screen and (max-width: 767px) {
   .table-responsive {
     width: 100%;
@@ -3005,7 +3004,6 @@ select[multiple].input-lg {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
-  margin-top: 10px;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -5028,8 +5026,7 @@ a.thumbnail.active {
 }
 .alert {
   padding: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
 }

@@ -1,0 +1,23 @@
+Metrics/LineLength:
+  # This will disable the rule completely, regardless what other options you put
+  # Enabled: false
+  # Change the default 80 chars limit value
+  Max: 140
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+AllCops:
+  Excludes:
+    - db/**/*
+    - config/**/*
+    - bin/**/*
