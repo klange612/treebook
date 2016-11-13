@@ -12,5 +12,7 @@
     </h5>
     <br />
     <%= link_to 'Edit', edit_status_path(@status), class: "btn btn-large btn-success" %>
+    <%= link_to 'Delete', @status, method: :delete, data: { confirm: "Are you sure?" },
+            class: 'btn btn-large btn-warning'%>
   </div>
 </div>
