@@ -1,4 +1,4 @@
-<%= simple_form_for(status, html: { class: "form-horizontal" },
+  <%= simple_form_for(status, html: { class: "form-horizontal" },
                     wrapper: :horizontal_form ) do |f| %>
   <% if status.errors.any? %>
     <div id="error_explanation">
@@ -12,9 +12,9 @@
     </div>
   <% end %>
 
-  <strong><%= current_user.id %></strong>
+  <%= f.input :user_id, collection: User.all, label_method: :profile_name %>
   <%= f.input :content %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.button :submit, class: "btn btn-large btn-success" %>
-
-<% end %>
+  <% end %>
+  </div>
+</div>

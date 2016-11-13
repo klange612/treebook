@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Show status</h1>
-<p>
-  <strong>Name:</strong>
-  <%= @status.user.full_name %>
-</p>
+<div class="row">
+  <div class="col-md-4 well">
+    <legend><strong>Show Status</strong></legend>
 
-<p>
-  <strong>Content:</strong>
-  <%= @status.content %>
-</p>
-
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', statuses_path %>
+    <h4>
+      <%= @status.user.full_name %>
+    </h4>
+    <h5>
+      <%= @status.content %>
+    </h5>
+    <br />
+    <%= link_to 'Edit', edit_status_path(@status), class: "btn btn-large btn-success" %>
+  </div>
+</div>

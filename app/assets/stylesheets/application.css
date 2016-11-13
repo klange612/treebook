@@ -31,3 +31,7 @@ body {
     margin: 10px 0 10px;
     border-bottom: 1px solid #eee;
 }
+
+.row {
+    padding-top: 20px;
+}

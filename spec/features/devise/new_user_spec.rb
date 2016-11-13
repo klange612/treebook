@@ -5,8 +5,7 @@ describe 'new user registration' do
               email: 'john@a.com', password: 'Password', password_confirmation: 'Password') }
 
   it 'should add a user' do
-    visit('/statuses')
-    click_link 'Sign up'
+    set_page
     expect(page).to have_content('Sign up')
     fill_in('user_first_name', with: 'John')
     fill_in('user_last_name', with: 'Doe')

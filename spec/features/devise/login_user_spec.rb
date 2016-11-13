@@ -1,13 +1,14 @@
 require 'rails_helper'
 
 describe 'user login should ' do
-  let!(:user) { User.create(email: 'john@a.com', password: 'password', password_confirmation: 'password') }
+  let!(:user) { User.create(first_name: "John", last_name: "Doe", profile_name: "jdoe",
+            email: 'john@a.com', password: 'password', password_confirmation: 'password') }
 
   it 'login with correct username and password' do
     visit 'users/sign_in'
     fill_in('user_email', with: 'john@a.com')
     fill_in('user_password', with: 'password')
-    click_button('Log in')
+    click_button('Sign in')
     expect(page).to have_content('Signed in successfully')
   end
 
@@ -15,7 +16,7 @@ describe 'user login should ' do
     visit 'users/sign_in'
     fill_in('user_email', with: 'bob@b.com')
     fill_in('user_password', with: 'password')
-    click_button('Log in')
+    click_button('Sign in')
     expect(page).to have_content('Invalid Email or password')
   end
 
@@ -23,7 +24,7 @@ describe 'user login should ' do
     visit 'users/sign_in'
     fill_in('user_email', with: 'john@a.com')
     fill_in('user_password', with: 'wrong_pass')
-    click_button('Log in')
+    click_button('Sign in')
     expect(page).to have_content('Invalid Email or password')
   end
 end
