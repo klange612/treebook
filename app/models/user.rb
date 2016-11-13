@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, :last_name, :profile_name, presence: true
+  validates :profile_name, :email, uniqueness: { case_sensitive: false }
 
   has_many :statuses
 
