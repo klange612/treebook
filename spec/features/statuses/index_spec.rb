@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'statuses index page ' do
-  let!(:status) { Status.create(content: 'My status') }
+  let!(:status) { Status.create(content: 'My status', user_id: 1) }
 
   it 'has title statuses' do
     set_page

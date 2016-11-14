@@ -63,7 +63,7 @@ describe 'new user registration' do
     fill_in('user_password', with: 'Password')
     fill_in('user_password_confirmation', with: 'x')
     click_button('Sign up')
-    expect(page).to have_content("Profile name has already been taken")
+    expect(page).to have_content('Profile name has already been taken')
   end
 
   def set_page
