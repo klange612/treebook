@@ -6,25 +6,19 @@ describe 'user login should ' do
 
   it ' login with correct username and password' do
     visit 'users/sign_in'
-    fill_in 'user_email', with: 'john@a.com'
-    fill_in 'user_password', with: 'password'
-    click_button('Sign in')
+    signin_user
     expect(page).to have_content('Signed in successfully')
   end
 
   it ' login to path /login with correct username and password' do
     visit '/login'
-    fill_in 'user_email', with: 'john@a.com'
-    fill_in 'user_password', with: 'password'
-    click_button('Sign in')
+    signin_user
     expect(page).to have_content('Signed in successfully')
   end
 
   it ' /logout should log user out' do
     visit '/login'
-    fill_in 'user_email', with: 'john@a.com'
-    fill_in 'user_password', with: 'password'
-    click_button('Sign in')
+    signin_user
     visit '/logout'
     expect(page).to have_content('Signed out successfully')
   end
@@ -43,5 +37,11 @@ describe 'user login should ' do
     fill_in 'user_password', with: 'wrong_pass'
     click_button('Sign in')
     expect(page).to have_content('Invalid Email or password')
+  end
+
+  def signin_user
+    fill_in 'user_email', with: 'john@a.com'
+    fill_in 'user_password', with: 'password'
+    click_button('Sign in')
   end
 end

@@ -7,12 +7,7 @@ describe 'new user registration' do
   it 'should add a user' do
     set_page
     expect(page).to have_content('Sign up')
-    fill_in('user_first_name', with: 'Prof')
-    fill_in('user_last_name', with: 'Name')
-    fill_in('user_profile_name', with: 'ProfName')
-    fill_in('user_email', with: 'a@a.com')
-    fill_in('user_password', with: 'Password')
-    fill_in('user_password_confirmation', with: 'Password')
+    user_info
     click_button('Sign up')
     expect(page).to have_content('You have signed up successfully')
   end
@@ -20,12 +15,7 @@ describe 'new user registration' do
   it 'should add a user at /register' do
     visit '/register'
     expect(page).to have_content('Sign up')
-    fill_in('user_first_name', with: 'Prof')
-    fill_in('user_last_name', with: 'Name')
-    fill_in('user_profile_name', with: 'ProfName')
-    fill_in('user_email', with: 'a@a.com')
-    fill_in('user_password', with: 'Password')
-    fill_in('user_password_confirmation', with: 'Password')
+    user_info
     click_button('Sign up')
     expect(page).to have_content('You have signed up successfully')
   end
@@ -64,6 +54,15 @@ describe 'new user registration' do
     fill_in('user_password_confirmation', with: 'x')
     click_button('Sign up')
     expect(page).to have_content('Profile name has already been taken')
+  end
+
+  def user_info
+    fill_in('user_first_name', with: 'Prof')
+    fill_in('user_last_name', with: 'Name')
+    fill_in('user_profile_name', with: 'ProfName')
+    fill_in('user_email', with: 'a@a.com')
+    fill_in('user_password', with: 'Password')
+    fill_in('user_password_confirmation', with: 'Password')
   end
 
   def set_page
