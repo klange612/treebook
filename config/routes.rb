@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'profiles/show'
+  get 'profiles/show/:id', to: 'profiles#show'
 
   devise_for :users
 
@@ -15,5 +15,7 @@ Rails.application.routes.draw do
 
   resources :statuses
   get 'new', to: 'statuses#new', as: :new
+
+  get ':id', to: 'profiles#show'
 
 end

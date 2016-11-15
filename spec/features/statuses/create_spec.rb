@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 describe 'creating or editing status should ' do
-  let!(:user) { User.create(first_name: 'John', last_name: 'Doe', profile_name: 'JDoe',
-              email: 'jdoe@a.com', password: 'password', password_confirmation: 'password') }
+  before(:each) do
+    @user = create(:hotty)     # FactoryGirl spec/factories/user.rb
+    @status = create(:status) # FactoryGirl spec/factories/status.rb
+  end
+
   let!(:status) { Status.create(content: 'My status not updated', user_id: 1) }
 
   it ' add a status when creating a valid status' do
@@ -14,6 +17,7 @@ describe 'creating or editing status should ' do
     expect(page).to have_content('Status was successfully created')
     visit '/statuses'
     expect(page).to have_content('My current status is')
+    expect(page).to have_content('hotty')
   end
 
   it ' error when invalid content creating' do
@@ -61,12 +65,8 @@ describe 'creating or editing status should ' do
 
   def signin
     visit '/login'
-    fill_in 'user_email', with: 'john@a.com'
-    fill_in 'user_password', with: 'password'
+    fill_in 'user_email', with: @user.email
+    fill_in 'user_password', with: @user.password
     click_button 'Sign in'
-  end
-
-  def page_new
-    visit '/new'
   end
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'statuses index page ' do
-  let!(:status) { Status.create(content: 'My status', user_id: 1) }
+  before(:each) { @status = create(:status) } # FactoryGirl spec/factories/status.rb
 
   it 'has title statuses' do
     set_page
@@ -10,9 +10,9 @@ describe 'statuses index page ' do
     end
   end
 
-  it "has a status of 'My Status'" do
+  it "has a status of 'My status not updated'" do
     set_page
-    expect(page).to have_content('My status')
+    expect(page).to have_content('My status not updated')
   end
 
   def set_page

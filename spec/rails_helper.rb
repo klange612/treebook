@@ -57,4 +57,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include Capybara::DSL
+  # spec/support/factory_girl.rb
+  config.include FactoryGirl::Syntax::Methods
+
 end

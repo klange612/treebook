@@ -1,5 +1,7 @@
-require 'rails_helper'
-
-RSpec.describe "profiles/show.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# require 'rails_helper'
+#
+# RSpec.describe "profiles/show.html.erb", type: :view do
+#   it " page to have header Profiles#show" do
+#     expect(page).to have_content("Profiles#show")
+#   end
+# end
