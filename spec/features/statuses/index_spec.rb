@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 describe 'statuses index page ' do
-  before(:each) { @status = create(:status) } # FactoryGirl spec/factories/status.rb
+
+# FactoryGirl spec/factories/status.rb
+  before(:each) do
+    @user = create(:hotty)
+    @status = create(:status)
+  end
 
   it 'has title statuses' do
     set_page

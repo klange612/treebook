@@ -1,4 +1,16 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
-<h2><%= @user.profile_name %></h2>
-<h3><%= @user.email %></h3>
+<h2>Statuses for</h2>
+
+<div class="row">
+  <div class="col-md-4">
+    <legend><strong><%= @user.profile_name %></strong> (<%= @user.email %>)</legend>
+    <% if @statuses %>
+        <div class="well"><% @statuses.each do |s| %>
+              <%= link_to s.content, status_path(s) %>
+              <%= time_ago_in_words(s.created_at) %> ago <br />
+          <% end %>
+        </div>
+    <% else %>
+        <%= 'Not statuses' %>
+    <% end %>
+  </div>
+</div>
