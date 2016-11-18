@@ -5,17 +5,27 @@
   <% end %>
 </div>
 
-  <% @statuses.reverse_each do |status| %>
+   <% @statuses.reverse_each do |status| %>
     <div class="status">
-        <strong><%= status.user.profile_name %></strong>
-      <p><%= status.content %></p>
-      <div class="meta">
-        <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
-        <span class="admin">
-           | <%= link_to "Edit", edit_status_path(status) %> |
-          <%= link_to "Delete", status, method: :delete, data: { confirm: "Are you sure?" } %>
-        </span>
+      <div class="row">
+        <div class="span">
+            <div class="col-sm-1">
+              <strong><%= status.user.profile_name %></strong> <br/>
+              <%= image_tag gravatar_url(status.user) %>
+            </div>
+            <div class="col-sm-2">
+              <p>
+              <p><%= status.content %></p>
+              </p>
+            <div class="meta">
+                <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
+                <span class="admin">
+                   | <%= link_to "Edit", edit_status_path(status) %> |
+                  <%= link_to "Delete", status, method: :delete, data: { confirm: "Are you sure?" } %>
+                </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
-
